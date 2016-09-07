@@ -9,9 +9,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ConfigManager {
-    public static Set<UUID> botPlayers = new HashSet<>();
+    public static Set<UUID> botPlayers;
 
     public static void loadConfig(Configuration config, Logger logger, Main main) {
+        botPlayers = new HashSet<>();
+
         config.addDefault("botsUUID", new ArrayList<String>());
         config.addDefault("botsUsername", new ArrayList<String>());
 

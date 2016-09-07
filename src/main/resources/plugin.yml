@@ -5,3 +5,8 @@ authors: [Amelorate]
 website: https://github.com/Ameliorate/BotPrison/tree/master
 
 main: org.ame.botprison.Main
+
+commands:
+  bpreload:
+    description: Reload the BotPrison config.
+    usage: /bpreload
