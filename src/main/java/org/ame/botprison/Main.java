@@ -3,6 +3,7 @@ package org.ame.botprison;
 import org.ame.botprison.command.Add;
 import org.ame.botprison.command.Reload;
 import org.ame.botprison.command.Remove;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -17,5 +18,9 @@ public class Main extends JavaPlugin {
 
         getCommand("bpremove").setExecutor(new Remove(getConfig(), this, false));
         getCommand("bpremoveuuid").setExecutor(new Remove(getConfig(), this, true));
+
+        WorldCreator worldCreator = new WorldCreator("world_bot_prison");
+        worldCreator.generator(new BotWorldGenerator());
+        getServer().createWorld(worldCreator);
     }
 }

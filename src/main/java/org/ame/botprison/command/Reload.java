@@ -26,7 +26,7 @@ public class Reload implements CommandExecutor {
         if (!commandSender.hasPermission("botprison.reload")) {
             return false;
         }
-        
+
         ConfigManager.loadConfig(config, logger, main);
         commandSender.sendMessage("Reloaded BotPrison config.");
         return true;
