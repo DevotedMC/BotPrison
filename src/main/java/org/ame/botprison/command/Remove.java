@@ -59,6 +59,8 @@ public class Remove implements CommandExecutor {
         config.set("botsUUID", bots);
         main.saveConfig();
 
+        main.getServer().getPlayer(player.getUniqueId()).teleport(main.getServer().getWorld("world").getSpawnLocation());
+
         commandSender.sendMessage(ChatColor.RED + "Removed " + playerNameOrUUID);
 
         return true;
