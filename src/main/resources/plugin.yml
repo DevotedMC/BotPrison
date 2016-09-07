@@ -10,3 +10,34 @@ commands:
   bpreload:
     description: Reload the BotPrison config.
     usage: /bpreload
+    permision: botprison.reload
+  bpadd:
+    description: Add a player as a new bot. The player may have to have already logged in.
+    usage: /bpadd [player]
+    permision: botprison.add
+  bpremove:
+    description: Remove a player as a bot. Will also teleport the player to natural spawn of the overworld.
+    usage: /bpremove [player]
+    permision: botprison.remove
+  bpadduuid:
+    description: Add a player as a new bot using it's UUID. The player may have to have already logged in.
+    usage: /bpadd [player]
+    permision: botprison.add
+  bpremoveuuid:
+    description: Remove a player as a bot using it's UUID. Will also teleport the player to natural spawn of the overworld if they're logged in.
+    usage: /bpremove [player]
+    permision: botprison.remove
+
+permisions:
+  botprison.*:
+    description: Gives access to all BotPrison commands.
+    children:
+      botprison.add: true
+      botprison.remove: true
+      botprison.reload: true
+  botprison.add:
+    description: Add a player as a bot.
+  botprison.remove:
+    description: Remove a player as a bot.
+  botprison.reload:
+    description: Reload the BotPrison config.

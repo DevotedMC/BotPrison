@@ -23,6 +23,10 @@ public class Reload implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if (!commandSender.hasPermission("botprison.reload")) {
+            return false;
+        }
+        
         ConfigManager.loadConfig(config, logger, main);
         commandSender.sendMessage("Reloaded BotPrison config.");
         return true;
