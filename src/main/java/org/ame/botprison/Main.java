@@ -22,5 +22,8 @@ public class Main extends JavaPlugin {
         WorldCreator worldCreator = new WorldCreator("world_bot_prison");
         worldCreator.generator(new BotWorldGenerator());
         getServer().createWorld(worldCreator);
+
+        getServer().getPluginManager().registerEvents(new BotRestrictionListener(), this);
+        getServer().getPluginManager().registerEvents(new BotWorldTeleporterListener(this), this);
     }
 }

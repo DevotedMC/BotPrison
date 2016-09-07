@@ -91,7 +91,14 @@ public class BotRestrictionListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerBucket(PlayerBucketEvent event) {
+    public void onPlayerBucket(PlayerBucketEmptyEvent event) {
+        if (ConfigManager.isBot(event.getPlayer())) {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerBucket(PlayerBucketFillEvent event) {
         if (ConfigManager.isBot(event.getPlayer())) {
             event.setCancelled(true);
         }

@@ -1,5 +1,6 @@
 package org.ame.botprison;
 
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,15 +17,20 @@ public class BotWorldTeleporterListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (ConfigManager.isBot(event.getPlayer())) {
-            event.getPlayer().teleport(main.getServer().getWorld("world_bot_prison").getSpawnLocation());
+            Location spawn = main.getServer().getWorld("world_bot_prison").getSpawnLocation();
+            spawn.setY(1);
+            event.getPlayer().teleport(spawn);
         }
     }
 
-    @EventHandler(ignoreCancelled = true)
     public void onPlayerMove(PlayerMoveEvent event) {
-        World botWorld = main.getServer().getWorld("world_bot_prison");
-        if (event.getTo().getWorld() != botWorld) {
-            event.getPlayer().teleport(botWorld.getSpawnLocation());
+        if (ConfigManager.isBot(event.getPlayer())) {
+            World botWorld = main.getServer().getWorld("world_bot_prison");
+            if (event.getTo().getWorld() != botWorld) {
+                Location spawn = botWorld.getSpawnLocation();
+                spawn.setY(1);
+                event.getPlayer().teleport(spawn);
+            }
         }
     }
 }
