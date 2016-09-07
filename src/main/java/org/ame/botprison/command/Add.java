@@ -10,6 +10,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.Configuration;
+import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.UUID;
@@ -59,6 +60,14 @@ public class Add implements CommandExecutor {
         bots.add(player.getUniqueId().toString());
         config.set("botsUUID", bots);
         main.saveConfig();
+
+        for (Player onlinePlayer : main.getServer().getOnlinePlayers()) {
+            if (onlinePlayer.getUniqueId() == player.getUniqueId()) {
+                onlinePlayer.teleport(main.getServer().getWorld("world_bot_prison").getSpawnLocation());
+                break;  // Slight optimization, since it's basically gaurenteed the same player can't be on the same server
+                        // twice.
+            }
+        }
 
         commandSender.sendMessage(ChatColor.RED + "Added " + playerNameOrUUID);
 
