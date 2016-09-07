@@ -3,7 +3,7 @@ package org.ame.botprison;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.Configuration;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.HumanEntity;
 
 import java.util.*;
 import java.util.logging.Level;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class ConfigManager {
     public static Set<UUID> botPlayers;
 
-    public static boolean isBot(Player player) {
+    public static boolean isBot(HumanEntity player) {
         return ConfigManager.botPlayers.contains(player.getUniqueId());
     }
 

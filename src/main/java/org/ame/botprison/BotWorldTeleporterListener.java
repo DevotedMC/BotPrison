@@ -20,7 +20,7 @@ public class BotWorldTeleporterListener implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onPlayerMove(PlayerMoveEvent event) {
         World botWorld = main.getServer().getWorld("world_bot_prison");
         if (event.getTo().getWorld() != botWorld) {
