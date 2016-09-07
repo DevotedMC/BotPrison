@@ -1,7 +1,7 @@
-name: empty-spigot-plugin
+name: bot-prison
 version: @version@-@apiversion@
-description: An empty example plugin for Spigot with Gradle
-authors: [Rene Hollander]
-website: https://github.com/ReneHollander/empty-spigot-plugin
+description: Sends certain players to a prison dimention and prevents them from moving or taking any non-chat/command action
+authors: [Amelorate]
+website: https://github.com/Ameliorate/BotPrison/tree/master
 
-main: com.example.emptyspigotplugin.EmptySpigotPlugin
+main: org.ame.botprison.Main
