@@ -1,7 +1,7 @@
-package org.ame.botprison.command;
+package pw.amel.botprison.command;
 
-import org.ame.botprison.ConfigManager;
-import org.ame.botprison.Main;
+import pw.amel.botprison.ConfigManager;
+import pw.amel.botprison.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;

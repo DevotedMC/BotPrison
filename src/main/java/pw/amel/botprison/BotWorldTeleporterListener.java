@@ -1,4 +1,4 @@
-package org.ame.botprison;
+package pw.amel.botprison;
 
 import org.bukkit.Location;
 import org.bukkit.World;

@@ -1,4 +1,4 @@
-package org.ame.botprison;
+package pw.amel.botprison;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

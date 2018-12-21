@@ -1,8 +1,8 @@
-package org.ame.botprison;
+package pw.amel.botprison;
 
-import org.ame.botprison.command.Add;
-import org.ame.botprison.command.Reload;
-import org.ame.botprison.command.Remove;
+import pw.amel.botprison.command.Add;
+import pw.amel.botprison.command.Reload;
+import pw.amel.botprison.command.Remove;
 import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
 

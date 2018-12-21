@@ -1,4 +1,4 @@
-package org.ame.botprison;
+package pw.amel.botprison;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
