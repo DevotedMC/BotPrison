@@ -1,5 +1,7 @@
 # BotPrison
 
+Minecraft Version: **1.12.2**
+
 Sends certain players to a prison dimention and prevents them from moving or taking any non-chat/command action.
 
 Basically, this allows player chat bots that can't be exploited easily.
